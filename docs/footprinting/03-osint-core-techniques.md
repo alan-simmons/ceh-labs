@@ -1,4 +1,4 @@
-🧠 Lab 03: Core OSINT Techniques (Social, Whois, DNS)
+# 🧠 Lab 03: Core OSINT Techniques (Social, Whois, DNS)
 
 ## 🎯 Objective
 Perform foundational OSINT techniques to gather information about a target using:
@@ -9,13 +9,12 @@ Perform foundational OSINT techniques to gather information about a target using
 ---
 
 ## 🧠 Concept
-
 Before active scanning or exploitation, attackers gather intelligence using publicly available data.
 
-These techniques allow you to identify:
-- People (social engineering targets)
-- Domain ownership and infrastructure
-- DNS configuration and services
+These techniques help identify:
+- People and potential social engineering targets
+- Domain ownership and infrastructure details
+- DNS configuration and exposed services
 
 ---
 
@@ -23,124 +22,138 @@ These techniques allow you to identify:
 
 ## ⚙️ Steps
 
- bash
+  bash
 python3 sherlock "Elon Musk"
-📸 Screenshots
-Sherlock Results
+📸 Screenshot + Explanation
+
+🔗 View Image
+
+Explanation:
+Sherlock scans multiple platforms for username matches and shows how identities can be linked across services, enabling detailed profiling of a target.
 
 🔎 Findings
-Multiple social profiles discovered across platforms
-Username reuse across services
-Publicly exposed personal and professional presence
+Multiple social profiles discovered
+Username reuse across platforms
+Public exposure of identity
 🛡️ Security Insight
 
 Attackers use this to:
 
-Build social engineering profiles
+Build social engineering attacks
 Identify high-value individuals
-Discover reused usernames and credentials
-
+Correlate identities across platforms
 
 
 
 # 🌍 2. Whois Footprinting
 ⚙️ Steps
-Navigated to DomainTools Whois Lookup
+Used DomainTools Whois lookup
 Queried: certifiedhacker.com
-Reviewed both the summary page and detailed Whois record
+📸 Screenshots + Explanations
+Whois Lookup Page
 
+🔗 View Image
 
-# 📸 Screenshots
-DomainTools Whois Lookup Page
+Explanation:
+The lookup interface allows querying domain registration data to retrieve ownership and infrastructure details.
 
 Whois Summary
 
-Detailed Whois Record
+🔗 View Image
 
-# 🔎 Findings
+Explanation:
+Provides a high-level overview including registrar, domain age, IP address, and hosting provider.
+
+Full Whois Record
+
+🔗 View Image
+
+Explanation:
+Contains detailed domain registration data such as name servers, registration dates, and administrative information.
+
+🔎 Findings
 Registrar: Network Solutions, LLC
 Domain created: 2002
 Name servers:
 ns1.bluehost.com
 ns2.bluehost.com
-IP address identified:
-162.241.216.11
-Domain privacy enabled through Perfect Privacy, LLC
+Domain privacy enabled
+🛡️ Security Insight
 
-# 🛡️ Security Insight
+Whois data reveals:
 
-Whois data can reveal:
+Infrastructure providers
+Domain age and credibility
+Potential ownership data
 
-Ownership details (if privacy is not enabled)
-Registrar and hosting relationships
-Domain age and history
-Name server infrastructure
+⚠️ Even with privacy enabled, valuable infrastructure information is still exposed.
 
-⚠️ Even when privacy protection is enabled, Whois can still provide valuable infrastructure intelligence.
+
 
 # 🌐 3. DNS Footprinting
 ⚙️ Steps
-Online nslookup Tool
-Opened an online nslookup interface
-Queried certifiedhacker.com
-Tested multiple record types:
-A
-CNAME
-NS
-SOA
-MX
+Online Tool
+Queried DNS records for certifiedhacker.com
 Windows CLI
 nslookup
 set type=a
 www.certifiedhacker.com
+📸 Screenshots + Explanations
+DNS Query Types
 
-Additional queries performed:
+🔗 View Image
 
-set type=cname
-www.certifiedhacker.com
-
-set type=soa
-certifiedhacker.com
-
-set type=a
-ns1.bluehost.com
-
-
-# 📸 Screenshots
-DNS Query Type Selection
+Explanation:
+Shows available DNS record types such as A, MX, NS, and SOA, which define how a domain operates.
 
 DNS A Record Result
 
+🔗 View Image
+
+Explanation:
+Displays the IP address associated with the domain, revealing where the website is hosted.
+
 Windows nslookup Output
 
-# 🔎 Findings
+🔗 View Image
+
+Explanation:
+Shows detailed DNS responses including A records, CNAME mappings, and name server information.
+
+🔎 Findings
 A Record:
 certifiedhacker.com → 162.241.216.11
 CNAME:
-www.certifiedhacker.com → certifiedhacker.com
+www → certifiedhacker.com
 Name Servers:
 ns1.bluehost.com
 ns2.bluehost.com
-SOA Record revealed:
-Primary name server
-Responsible admin address
-Serial number
-Refresh / retry / expire values
-Default TTL
-
-# 🛡️ Security Insight
+🛡️ Security Insight
 
 DNS data allows attackers to:
 
 Map infrastructure
-Identify mail servers and DNS providers
-Understand how domains resolve
-Discover additional systems for further enumeration
+Identify services and dependencies
+Discover potential attack targets
 
-⚠️ DNS records often provide the technical blueprint of a target environment.
+⚠️ DNS records act as a blueprint of the target environment.
+
 
 # 🧾 Key Takeaways
-OSINT provides powerful intelligence without direct interaction
-Social media expands attack surface through human targets
-Whois reveals ownership and infrastructure relationships
-DNS exposes technical architecture and service dependencies
+OSINT provides intelligence without direct interaction
+Social media expands the human attack surface
+Whois reveals domain infrastructure
+DNS exposes technical architecture
+
+
+# 💼 Real-World Application
+
+SOC Analyst
+
+-Understand reconnaissance behavior
+-Security Analyst
+-Assess external exposure
+-Help Desk / IT
+-Understand DNS and domain dependencies
+-Penetration Tester
+-Use OSINT as the first phase of engagement
