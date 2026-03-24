@@ -1,6 +1,6 @@
-# 🧠 Lab 03: Core OSINT Techniques (Social, Whois, DNS)
+# Lab 03: Core OSINT Techniques (Social, Whois, DNS)
 
-## 🎯 Objective
+## Objective
 Perform foundational OSINT techniques to gather information about a target using:
 - Social media footprinting
 - Whois lookup
@@ -8,67 +8,165 @@ Perform foundational OSINT techniques to gather information about a target using
 
 ---
 
-# 👤 1. Social Media Footprinting (Sherlock)
+## Concept
+Before active scanning or exploitation, attackers gather intelligence using publicly available data.
 
-## ⚙️ Steps
-python3 sherlock "Elon Musk"
-📸 Screenshot + Explanation
+These techniques help identify:
+- People and potential social engineering targets
+- Domain ownership and infrastructure details
+- DNS configuration and exposed services
 
-🔗 Open Image
+---
 
-Explanation:
-Sherlock identifies usernames across multiple platforms, helping correlate identities and build a profile of a target.
+## 1. Social Media Footprinting (Sherlock)
 
-## 🌍 2. Whois Footprinting
-📸 Screenshots + Explanations
-Whois Lookup
+### Steps
+`python3 sherlock "Elon Musk"`
 
-🔗 Open Image
+### Screenshot
+![Sherlock Results](../../screenshots/footprinting/03/03-sherlock.png)
 
-Explanation:
-Used to retrieve domain registration and infrastructure details.
+[Open image](../../screenshots/footprinting/03/03-sherlock.png)
 
-Whois Summary
+**Description:**  
+Sherlock checks many platforms for username matches. This helps show how one identity can be correlated across multiple services.
 
-🔗 Open Image
+### Findings
+- Multiple social profiles were identified
+- Username reuse was visible across platforms
+- Public identity exposure can support profiling
 
-Explanation:
-Shows registrar, domain age, and hosting-related data.
+### Security Insight
+Attackers use this to:
+- Build social engineering profiles
+- Identify high-value individuals
+- Correlate identities across services
 
-Whois Full Record
+---
 
-🔗 Open Image
+## 2. Whois Footprinting
 
-Explanation:
-Detailed domain data including name servers and registration info.
+### Steps
+- Opened a Whois lookup tool
+- Queried `certifiedhacker.com`
+- Reviewed both summary and detailed registration data
 
-## 🌐 3. DNS Footprinting
-📸 Screenshots + Explanations
-DNS Record Types
+### Screenshot: Whois Lookup
+![Whois Lookup](../../screenshots/footprinting/03/03-whois-lookup.png)
 
-🔗 Open Image
+[Open image](../../screenshots/footprinting/03/03-whois-lookup.png)
 
-Explanation:
-Displays available DNS record types such as A, MX, NS, and SOA.
+**Description:**  
+This shows the lookup interface used to retrieve domain registration and ownership-related data.
 
-DNS A Record
+### Screenshot: Whois Summary
+![Whois Summary](../../screenshots/footprinting/03/03-whois-summary.png)
 
-🔗 Open Image
+[Open image](../../screenshots/footprinting/03/03-whois-summary.png)
 
-Explanation:
-Maps the domain to its IP address.
+**Description:**  
+This summary highlights the registrar, IP address, and general infrastructure details tied to the domain.
 
-nslookup Output
+### Screenshot: Full Whois Record
+![Whois Full Record](../../screenshots/footprinting/03/03-whois-full.png)
 
-🔗 Open Image
+[Open image](../../screenshots/footprinting/03/03-whois-full.png)
 
-Explanation:
-Shows DNS resolution results including IP and name servers.
+**Description:**  
+The full record includes detailed registration information such as name servers, dates, and privacy protection details.
 
-🛡️ Security Insight
+### Findings
+- Registrar: Network Solutions, LLC
+- Domain creation year: 2002
+- Name servers:
+  - `ns1.bluehost.com`
+  - `ns2.bluehost.com`
+- Privacy protection was enabled
 
-These techniques allow attackers to:
+### Security Insight
+Whois data can reveal:
+- Registrar and provider relationships
+- Domain age and history
+- Infrastructure details
+- Ownership details when privacy is not enabled
 
-Map infrastructure
-Identify services
-Build attack paths without touching the system
+---
+
+## 3. DNS Footprinting
+
+### Steps
+- Queried DNS records for `certifiedhacker.com`
+- Reviewed record types such as A, CNAME, NS, and SOA
+- Used `nslookup` from the command line
+
+Commands used:
+- `nslookup`
+- `set type=a`
+- `www.certifiedhacker.com`
+- `set type=cname`
+- `set type=soa`
+
+### Screenshot: DNS Record Types
+![DNS Types](../../screenshots/footprinting/03/03-dns-types.png)
+
+[Open image](../../screenshots/footprinting/03/03-dns-types.png)
+
+**Description:**  
+This shows the available DNS record types that can be queried to understand how the domain is configured.
+
+### Screenshot: DNS A Record Result
+![DNS A Record](../../screenshots/footprinting/03/03-dns-a.png)
+
+[Open image](../../screenshots/footprinting/03/03-dns-a.png)
+
+**Description:**  
+The A record maps the domain to an IP address, revealing where the site is hosted.
+
+### Screenshot: nslookup Output
+![nslookup Output](../../screenshots/footprinting/03/03-nslookup.png)
+
+[Open image](../../screenshots/footprinting/03/03-nslookup.png)
+
+**Description:**  
+This output shows command-line DNS resolution results, including how the domain and related records resolve.
+
+### Findings
+- A record resolved to `162.241.216.11`
+- `www.certifiedhacker.com` pointed to the main domain
+- Name servers included:
+  - `ns1.bluehost.com`
+  - `ns2.bluehost.com`
+
+### Security Insight
+DNS data allows attackers to:
+- Map infrastructure
+- Identify dependencies and providers
+- Discover targets for further enumeration
+
+---
+
+## Key Takeaways
+- OSINT gathers useful intelligence without directly interacting with the target
+- Social media can expose people and naming patterns
+- Whois reveals domain and provider relationships
+- DNS reveals technical architecture
+
+---
+
+## Real-World Application
+**SOC Analyst**
+- Understands early-stage reconnaissance behavior
+
+**Security Analyst**
+- Assesses external exposure and attack surface
+
+**Help Desk / IT**
+- Understands DNS behavior and domain dependencies
+
+**Penetration Tester**
+- Uses OSINT as the first phase of engagement
+
+---
+
+## Final Insight
+Most attacks begin with reconnaissance, not exploitation.
