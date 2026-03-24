@@ -8,152 +8,67 @@ Perform foundational OSINT techniques to gather information about a target using
 
 ---
 
-## 🧠 Concept
-Before active scanning or exploitation, attackers gather intelligence using publicly available data.
-
-These techniques help identify:
-- People and potential social engineering targets
-- Domain ownership and infrastructure details
-- DNS configuration and exposed services
-
----
-
 # 👤 1. Social Media Footprinting (Sherlock)
 
 ## ⚙️ Steps
-
-  bash
 python3 sherlock "Elon Musk"
 📸 Screenshot + Explanation
 
-🔗 View Image
+🔗 Open Image
 
 Explanation:
-Sherlock scans multiple platforms for username matches and shows how identities can be linked across services, enabling detailed profiling of a target.
+Sherlock identifies usernames across multiple platforms, helping correlate identities and build a profile of a target.
 
-🔎 Findings
-Multiple social profiles discovered
-Username reuse across platforms
-Public exposure of identity
-🛡️ Security Insight
-
-Attackers use this to:
-
-Build social engineering attacks
-Identify high-value individuals
-Correlate identities across platforms
-
-
-
-# 🌍 2. Whois Footprinting
-⚙️ Steps
-Used DomainTools Whois lookup
-Queried: certifiedhacker.com
+## 🌍 2. Whois Footprinting
 📸 Screenshots + Explanations
-Whois Lookup Page
+Whois Lookup
 
-🔗 View Image
+🔗 Open Image
 
 Explanation:
-The lookup interface allows querying domain registration data to retrieve ownership and infrastructure details.
+Used to retrieve domain registration and infrastructure details.
 
 Whois Summary
 
-🔗 View Image
+🔗 Open Image
 
 Explanation:
-Provides a high-level overview including registrar, domain age, IP address, and hosting provider.
+Shows registrar, domain age, and hosting-related data.
 
-Full Whois Record
+Whois Full Record
 
-🔗 View Image
+🔗 Open Image
 
 Explanation:
-Contains detailed domain registration data such as name servers, registration dates, and administrative information.
+Detailed domain data including name servers and registration info.
 
-🔎 Findings
-Registrar: Network Solutions, LLC
-Domain created: 2002
-Name servers:
-ns1.bluehost.com
-ns2.bluehost.com
-Domain privacy enabled
-🛡️ Security Insight
-
-Whois data reveals:
-
-Infrastructure providers
-Domain age and credibility
-Potential ownership data
-
-⚠️ Even with privacy enabled, valuable infrastructure information is still exposed.
-
-
-
-# 🌐 3. DNS Footprinting
-⚙️ Steps
-Online Tool
-Queried DNS records for certifiedhacker.com
-Windows CLI
-nslookup
-set type=a
-www.certifiedhacker.com
+## 🌐 3. DNS Footprinting
 📸 Screenshots + Explanations
-DNS Query Types
+DNS Record Types
 
-🔗 View Image
-
-Explanation:
-Shows available DNS record types such as A, MX, NS, and SOA, which define how a domain operates.
-
-DNS A Record Result
-
-🔗 View Image
+🔗 Open Image
 
 Explanation:
-Displays the IP address associated with the domain, revealing where the website is hosted.
+Displays available DNS record types such as A, MX, NS, and SOA.
 
-Windows nslookup Output
+DNS A Record
 
-🔗 View Image
+🔗 Open Image
 
 Explanation:
-Shows detailed DNS responses including A records, CNAME mappings, and name server information.
+Maps the domain to its IP address.
 
-🔎 Findings
-A Record:
-certifiedhacker.com → 162.241.216.11
-CNAME:
-www → certifiedhacker.com
-Name Servers:
-ns1.bluehost.com
-ns2.bluehost.com
+nslookup Output
+
+🔗 Open Image
+
+Explanation:
+Shows DNS resolution results including IP and name servers.
+
 🛡️ Security Insight
 
-DNS data allows attackers to:
+These techniques allow attackers to:
 
 Map infrastructure
-Identify services and dependencies
-Discover potential attack targets
-
-⚠️ DNS records act as a blueprint of the target environment.
-
-
-# 🧾 Key Takeaways
-OSINT provides intelligence without direct interaction
-Social media expands the human attack surface
-Whois reveals domain infrastructure
-DNS exposes technical architecture
-
-
-# 💼 Real-World Application
-
-SOC Analyst
-
--Understand reconnaissance behavior
--Security Analyst
--Assess external exposure
--Help Desk / IT
--Understand DNS and domain dependencies
--Penetration Tester
--Use OSINT as the first phase of engagement
+Identify services
+Build attack paths without touching the system
