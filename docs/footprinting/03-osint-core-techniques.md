@@ -23,9 +23,10 @@ These techniques allow you to identify:
 
 ## ⚙️ Steps
 
-  bash
+ bash
 python3 sherlock "Elon Musk"
-📸 Screenshot
+📸 Screenshots
+Sherlock Results
 
 🔎 Findings
 Multiple social profiles discovered across platforms
@@ -41,78 +42,105 @@ Discover reused usernames and credentials
 
 
 
+
 # 🌍 2. Whois Footprinting
 ⚙️ Steps
-Used DomainTools / Whois lookup
+Navigated to DomainTools Whois Lookup
 Queried: certifiedhacker.com
-📸 Screenshots
+Reviewed both the summary page and detailed Whois record
+
+
+# 📸 Screenshots
+DomainTools Whois Lookup Page
+
 Whois Summary
 
 Detailed Whois Record
 
-🔎 Findings
+# 🔎 Findings
 Registrar: Network Solutions, LLC
 Domain created: 2002
 Name servers:
 ns1.bluehost.com
 ns2.bluehost.com
-Hosting provider identified
-Domain privacy enabled (Perfect Privacy, LLC)
+IP address identified:
+162.241.216.11
+Domain privacy enabled through Perfect Privacy, LLC
 
-🛡️ Security Insight
+# 🛡️ Security Insight
 
 Whois data can reveal:
 
-Ownership details (if privacy not enabled)
-Infrastructure providers
-Domain age and credibility
+Ownership details (if privacy is not enabled)
+Registrar and hosting relationships
+Domain age and history
+Name server infrastructure
 
-⚠️ Older domains often indicate established infrastructure
+⚠️ Even when privacy protection is enabled, Whois can still provide valuable infrastructure intelligence.
 
 # 🌐 3. DNS Footprinting
 ⚙️ Steps
-Linux / Online Tool
-Queried DNS records using nslookup
+Online nslookup Tool
+Opened an online nslookup interface
+Queried certifiedhacker.com
+Tested multiple record types:
+A
+CNAME
+NS
+SOA
+MX
 Windows CLI
 nslookup
 set type=a
-certifiedhacker.com
+www.certifiedhacker.com
 
-Additional queries:
+Additional queries performed:
 
 set type=cname
+www.certifiedhacker.com
+
 set type=soa
-set type=ns
-📸 Screenshots
-DNS Query Interface
+certifiedhacker.com
+
+set type=a
+ns1.bluehost.com
+
+
+# 📸 Screenshots
+DNS Query Type Selection
 
 DNS A Record Result
 
 Windows nslookup Output
 
-🔎 Findings
+# 🔎 Findings
 A Record:
-162.241.216.11
+certifiedhacker.com → 162.241.216.11
+CNAME:
+www.certifiedhacker.com → certifiedhacker.com
 Name Servers:
 ns1.bluehost.com
 ns2.bluehost.com
-CNAME:
-www → certifiedhacker.com
-SOA Record:
-Shows DNS authority and admin email
+SOA Record revealed:
+Primary name server
+Responsible admin address
+Serial number
+Refresh / retry / expire values
+Default TTL
 
 # 🛡️ Security Insight
 
 DNS data allows attackers to:
 
 Map infrastructure
-Identify mail servers and services
-Discover additional subdomains
-Target specific systems for further enumeration
+Identify mail servers and DNS providers
+Understand how domains resolve
+Discover additional systems for further enumeration
 
+⚠️ DNS records often provide the technical blueprint of a target environment.
 
 # 🧾 Key Takeaways
 OSINT provides powerful intelligence without direct interaction
 Social media expands attack surface through human targets
-Whois reveals ownership and infrastructure
-DNS exposes technical architecture of systems
+Whois reveals ownership and infrastructure relationships
+DNS exposes technical architecture and service dependencies
