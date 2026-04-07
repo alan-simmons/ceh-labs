@@ -4,7 +4,7 @@
 
 ## 📸 Aggressive Scan Results
 
-![Aggressive Scan](../screenshots/scanning/02-aggressive-scan.png)
+![Aggressive Scan](../../screenshots/scanning/02-aggressive-scan.png)
 
 **Explanation:**  
 The `-A` flag enables:
@@ -17,7 +17,7 @@ The `-A` flag enables:
 
 ## 📸 Service + OS Details
 
-![Service OS](../screenshots/scanning/02-service-os.png)
+![Service OS](../../screenshots/scanning/02-service-os.png)
 
 **Explanation:**  
 Reveals detailed service information including:
@@ -32,7 +32,7 @@ Reveals detailed service information including:
 
 ## 📸 NSE Script (SMB OS Discovery)
 
-![SMB OS](../screenshots/scanning/02-smb-os.png)
+![SMB OS](../../screenshots/scanning/02-smb-os.png)
 
 **Explanation:**  
 Using NSE scripts, Nmap identified:
@@ -80,7 +80,7 @@ nmap -g 80 10.10.1.11
 
 ## 📸 Fragmented Scan
 
-![Fragmented](../screenshots/scanning/02-fragmented.png)
+![Fragmented](../../screenshots/scanning/02-fragmented.png)
 
 **Explanation:**  
 Breaks packets into smaller fragments to bypass firewall inspection.
@@ -89,7 +89,7 @@ Breaks packets into smaller fragments to bypass firewall inspection.
 
 ## 📸 Decoy Scan
 
-![Decoy](../screenshots/scanning/02-decoy.png)
+![Decoy](../../screenshots/scanning/02-decoy.png)
 
 **Explanation:**  
 Generates multiple fake IP addresses to hide the real attacker.
@@ -98,7 +98,7 @@ Generates multiple fake IP addresses to hide the real attacker.
 
 ## 📸 MTU Scan
 
-![MTU](../screenshots/scanning/02-mtu.png)
+![MTU](../../screenshots/scanning/02-mtu.png)
 
 **Explanation:**  
 Adjusts packet size to evade detection systems.
@@ -107,7 +107,7 @@ Adjusts packet size to evade detection systems.
 
 ## 📸 Source Port Manipulation
 
-![Source Port](../screenshots/scanning/02-source-port.png)
+![Source Port](../../screenshots/scanning/02-source-port.png)
 
 **Explanation:**  
 Uses trusted ports (like 80) to bypass firewall rules.
@@ -116,7 +116,7 @@ Uses trusted ports (like 80) to bypass firewall rules.
 
 ## 📸 Packet Capture (Wireshark Evidence)
 
-![Wireshark](../screenshots/scanning/02-wireshark.png)
+![Wireshark](../../screenshots/scanning/02-wireshark.png)
 
 **Explanation:**  
 Shows fragmented and manipulated packets being sent across the network.
@@ -125,7 +125,7 @@ Shows fragmented and manipulated packets being sent across the network.
 
 ## 📸 Firewall State
 
-![Firewall](../screenshots/scanning/02-firewall.png)
+![Firewall](../../screenshots/scanning/02-firewall.png)
 
 **Explanation:**  
 Demonstrates how firewall configurations impact scan results.
