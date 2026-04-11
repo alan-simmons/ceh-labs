@@ -22,7 +22,7 @@ Instead of manually writing commands, AI generates and executes them, speeding u
 
 ## 📸 Results
 
-![Host Discovery](../screenshots/scanning/04/01-host-discovery.png)
+![Host Discovery](../../screenshots/scanning/04/01-host-discovery.png)
 
 **Explanation:**  
 AI generated a scan to discover active hosts on the network and stored the results in a file.
@@ -33,7 +33,7 @@ AI generated a scan to discover active hosts on the network and stored the resul
 
 ## 📸 Output
 
-![Host List](../screenshots/scanning/04/02-host-list.png)
+![Host List](../../screenshots/scanning/04/02-host-list.png)
 
 **Explanation:**  
 Shows the list of live hosts identified during the discovery phase.
@@ -44,7 +44,7 @@ Shows the list of live hosts identified during the discovery phase.
 
 ## 📸 Results
 
-![Nmap Scan](../screenshots/scanning/04/03-nmap-scan.png)
+![Nmap Scan](../../screenshots/scanning/04/03-nmap-scan.png)
 
 **Explanation:**  
 AI performed a comprehensive scan against discovered hosts, identifying open ports and services.
@@ -55,7 +55,7 @@ AI performed a comprehensive scan against discovered hosts, identifying open por
 
 ## 📸 Output
 
-![Parsed Results](../screenshots/scanning/04/04-parsed-results.png)
+![Parsed Results](../../screenshots/scanning/04/04-parsed-results.png)
 
 **Explanation:**  
 Displays structured scan results, making it easier to analyze hosts, ports, and services.
@@ -66,7 +66,7 @@ Displays structured scan results, making it easier to analyze hosts, ports, and 
 
 ## 📸 Results
 
-![Stealth Scan](../screenshots/scanning/04/05-stealth-scan.png)
+![Stealth Scan](../../screenshots/scanning/04/05-stealth-scan.png)
 
 **Explanation:**  
 A stealth scan identifies open ports without completing full connections, reducing detection.
@@ -77,7 +77,7 @@ A stealth scan identifies open ports without completing full connections, reduci
 
 ## 📸 Results
 
-![XMAS Scan](../screenshots/scanning/04/06-xmas-scan.png)
+![XMAS Scan](../../screenshots/scanning/04/06-xmas-scan.png)
 
 **Explanation:**  
 Uses unusual TCP flags to identify filtered or open ports and test firewall behavior.
@@ -88,7 +88,7 @@ Uses unusual TCP flags to identify filtered or open ports and test firewall beha
 
 ## 📸 Results
 
-![Open Ports](../screenshots/scanning/04/07-open-ports.png)
+![Open Ports](../../screenshots/scanning/04/07-open-ports.png)
 
 **Explanation:**  
 Shows open ports and exposed services on the target system.
@@ -99,7 +99,7 @@ Shows open ports and exposed services on the target system.
 
 ## 📸 Results
 
-![TTL](../screenshots/scanning/04/08-ttl.png)
+![TTL](../../screenshots/scanning/04/08-ttl.png)
 
 **Explanation:**  
 TTL values provide clues about the operating system running on the target.
@@ -110,7 +110,7 @@ TTL values provide clues about the operating system running on the target.
 
 ## 📸 Results
 
-![ICMP](../screenshots/scanning/04/09-hping.png)
+![ICMP](../../screenshots/scanning/04/09-hping.png)
 
 **Explanation:**  
 ICMP scanning tests host responsiveness and network latency.
@@ -121,7 +121,7 @@ ICMP scanning tests host responsiveness and network latency.
 
 ## 📸 Output
 
-![Python Script](../screenshots/scanning/04/10-python-script.png)
+![Python Script](../../screenshots/scanning/04/10-python-script.png)
 
 **Explanation:**  
 AI generated a script to automate scanning and vulnerability checks across multiple hosts.
@@ -132,7 +132,7 @@ AI generated a script to automate scanning and vulnerability checks across multi
 
 ## 📸 Results
 
-![Decoy](../screenshots/scanning/04/11-decoy.png)
+![Decoy](../../screenshots/scanning/04/11-decoy.png)
 
 **Explanation:**  
 Decoy scanning hides the real source by using fake IP addresses to evade detection.
