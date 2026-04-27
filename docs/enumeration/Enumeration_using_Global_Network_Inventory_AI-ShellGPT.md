@@ -44,11 +44,11 @@
 
 ### 📸 Screenshots
 
-![Audit Setup](../screenshots/enumeration/05/01-audit-setup.png)
-![Scan Mode](../screenshots/enumeration/05/02-scan-mode.png)
-![Installed Software](../screenshots/enumeration/05/03-installed-software.png)
-![Services](../screenshots/enumeration/05/04-services.png)
-![User Groups](../screenshots/enumeration/05/05-user-groups.png)
+![Audit Setup](../../screenshots/enumeration/05/01-audit-setup.png)
+![Scan Mode](../../screenshots/enumeration/05/02-scan-mode.png)
+![Installed Software](../../screenshots/enumeration/05/03-installed-software.png)
+![Services](../../screenshots/enumeration/05/04-services.png)
+![User Groups](../../screenshots/enumeration/05/05-user-groups.png)
 
 ---
 
@@ -65,31 +65,31 @@
 
 ### 📌 NetBIOS Enumeration
 
-![NetBIOS Enumeration](../screenshots/enumeration/05/06-netbios.png)
+![NetBIOS Enumeration](../../screenshots/enumeration/05/06-netbios.png)
 
 ---
 
 ### 📌 SMB Enumeration
 
-![SMB Enumeration](../screenshots/enumeration/05/07-smb-users.png)
+![SMB Enumeration](../../screenshots/enumeration/05/07-smb-users.png)
 
 ---
 
 ### 📌 LDAP Enumeration (Brute Force)
 
-![LDAP Enumeration](../screenshots/enumeration/05/08-ldap.png)
+![LDAP Enumeration](../../screenshots/enumeration/05/08-ldap.png)
 
 ---
 
 ### 📌 DNS Enumeration
 
-![DNS Enumeration](../screenshots/enumeration/05/09-dns.png)
+![DNS Enumeration](../../screenshots/enumeration/05/09-dns.png)
 
 ---
 
 ### 📌 SMTP Enumeration
 
-![SMTP Enumeration](../screenshots/enumeration/05/10-smtp.png)
+![SMTP Enumeration](../../screenshots/enumeration/05/10-smtp.png)
 
 ---
 
